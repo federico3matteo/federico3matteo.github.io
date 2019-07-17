@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # perspective-transform
 
 A small JavaScript library for creating and applying perspective transforms. A perspective transform can easily be used to map one 2D quadrilateral to another, given the corner coordinates for the source and destination quadrilaterals. [Here](http://xenia.media.mit.edu/~cwren/interpolator/) is a useful resource for learning more about perspective transforms and the math behind them. [And here](http://uncorkedstudios.com/blog/perspective-transforms-in-javascript) is a blog post I wrote about the motivation for creating this library and details of some of its applications.
@@ -126,3 +127,6 @@ var perspT = PerspT(srcPts, dstPts);
 var mat = perspT.coeffsInv;
 // [1.9955408809, -0.1282507787, -62.4497171511, -2.9335671323, 2.2894572644, -821.8108124927, -0.0013225082, -0.0008117138, 1]
 ```
+=======
+# federico3matteo.github.io
+>>>>>>> 31edae0530ef183bc5f931d6ac3f739f8195480e
