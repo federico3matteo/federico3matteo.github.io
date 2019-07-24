@@ -56,3 +56,21 @@ window.addEventListener('mouseup', function(evnt) {
   currentcorner = -1;
 })
 window.addEventListener('mousemove', move);
+window.addEventListener('touchend', function(evnt) {
+  currentcorner = -1;
+})
+window.addEventListener('touchmove', move);
+window.addEventListener('touchstart', function(evnt) {
+  var x = evnt.pageX, y = evnt.pageY, dx, dy;
+  var best = 900; // 20px grab radius
+  currentcorner = -1;
+  for (var i = 0; i != 8; i += 2) {
+    dx = x - corners[i];
+    dy = y - corners[i + 1];
+    if (best > dx*dx + dy*dy) {
+      best = dx*dx + dy*dy;
+      currentcorner = i;
+    }
+  }
+  move(evnt);
+});
