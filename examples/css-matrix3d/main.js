@@ -14,14 +14,16 @@ function transform2d(elt, x1, y1, x2, y2, x3, y3, x4, y4) {
 }
 
 corners = [100, 100, 400, 100, 100, 400, 400, 400];
+//corners = [100, 100, 400, 100, 100, 400, 400, 400];
 function update() {
   var box = document.getElementById("box");
   transform2d(box, corners[0], corners[1], corners[2], corners[3],
                    corners[4], corners[5], corners[6], corners[7]);
   for (var i = 0; i != 8; i += 2) {
     var elt = document.getElementById("marker" + i);
-    elt.style.left = corners[i] + "px";
-    elt.style.top = corners[i + 1] + "px";
+    
+    elt.style.left =(corners[i]).toString() + "px";
+    elt.style.top = (corners[i + 1]).toString() + "px";
   }
 }
 function move(evnt) {
@@ -65,7 +67,7 @@ window.addEventListener('touchstart', function(evnt) {
   var best = 900; // 20px grab radius
   currentcorner = -1;
   for (var i = 0; i != 8; i += 2) {
-    dx = x - corners[i];
+    dx = x - c;
     dy = y - corners[i + 1];
     if (best > dx*dx + dy*dy) {
       best = dx*dx + dy*dy;
@@ -73,4 +75,13 @@ window.addEventListener('touchstart', function(evnt) {
     }
   }
   move(evnt);
+});
+
+window.addEventListener("load",  function(evnt){
+//window.addEventListener( 'keypress', function(evnt){
+  var ax=Math.floor(window.screen.availWidth*0.35);
+  var ay=Math.floor(window.screen.availHeight*0.25);
+  var l=Math.floor(window.screen.availWidth*0.18);//punto di arrivo
+  corners = [ax, ay,   l+ax, ay,   ax, l+ay,   l+ax, l+ay];
+  update();
 });

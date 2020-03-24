@@ -34,15 +34,19 @@
             image-rendering: -webkit-opt;
             -ms-accelerator: true;
             -ms-interpolation-mode: bicubic;/* nearest-neighbor;*/
+            overflow: visible;
         }
         #box img {
             width: auto;
             height: auto;
             Max-width: 900px;
             Max-height: 900px;
+            transform: scale(2.5);
+            
         }
         .corner:hover{
             opacity: 1;
+            transform: scale(2);
         }
         .corner {
             position: absolute;
@@ -79,7 +83,7 @@
         <div id="marker2" class="corner">+</div>
         <div id="marker4" class="corner">+</div>
         <div id="marker6" class="corner">+</div>
-		<div id="colorbackg" class="corner">O</div>
+		<div id="colorbackg" class="corner">O<div>
    <script type="text/javascript" src="../..//dist/perspective-transform.min.js"></script>
    <script type="text/javascript" src="./main.js"></script>
    <script src="../..//dist/vanilla-picker.js?123456"></script>
