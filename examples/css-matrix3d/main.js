@@ -67,7 +67,7 @@ window.addEventListener('touchstart', function(evnt) {
   var best = 900; // 20px grab radius
   currentcorner = -1;
   for (var i = 0; i != 8; i += 2) {
-    dx = x - c;
+    dx = x - corners[i];
     dy = y - corners[i + 1];
     if (best > dx*dx + dy*dy) {
       best = dx*dx + dy*dy;
